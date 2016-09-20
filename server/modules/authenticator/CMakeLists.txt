@@ -3,6 +3,11 @@ target_link_libraries(MySQLAuth maxscale-common)
 set_target_properties(MySQLAuth PROPERTIES VERSION "1.0.0")
 install_module(MySQLAuth core)
 
+add_library(GSSAPIAuth SHARED gssapi_auth.c)
+target_link_libraries(GSSAPIAuth maxscale-common)
+set_target_properties(GSSAPIAuth PROPERTIES VERSION "1.0.0")
+install_module(GSSAPIAuth core)
+
 add_library(NullAuthAllow SHARED null_auth_allow.c)
 target_link_libraries(NullAuthAllow maxscale-common)
 set_target_properties(NullAuthAllow PROPERTIES VERSION "1.0.0")
